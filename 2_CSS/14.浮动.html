@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动</title>
+    <style>
+        /* 浮动后元素所在空间会被释放 */
+
+        .box {
+            width: 200px;
+            height: 200px;
+            float: right;
+        }
+
+        #div1 {
+            background: #ff0000;
+        }
+
+        #div2 {
+            background: #00ff00;
+        }
+
+        #div3 {
+            background: #0000ff;
+        }
+
+        #div4 {
+            height: 200px;
+            background: rgb(109, 155, 115);
+        }
+
+        ul {
+            background: rgb(179, 144, 144);
+            /* overflow: hidden; */
+
+            /* height: 50px; */
+        }
+
+        /* 子元素浮动使得父元素高度塌陷:
+            1、给父元素设置固定的高度
+            2、给父元素设置overflow: hidden;
+            3、clearfix 类
+        
+         */
+
+        ul li {
+            float: left;
+            list-style: none;
+            width: 100px;
+        }
+
+        .clear {
+            /* height: 100px; */
+            /* clear: both; */
+        }
+
+        .clearfix::after {
+            /* content: '';
+            display: block;
+            clear: both; */
+        }
+
+        #aa {
+            /* 清除该元素自身的浮动 */
+            float: none;
+            /* 清除该元素上面的元素的浮动 */
+            clear: both;
+        }
+
+        /* ul li:last-child {
+            clear: both !important;
+        } */
+
+        #div4 {
+            width: 200px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box" id="div1">item1</div>
+    <div class="box" id="div2">item2</div>
+    <div class="box" id="div3">item3</div> -->
+
+    <ul class="clearfix">
+        <li><a href="">页面1</a></li>
+        <li><a href="">页面2</a></li>
+        <li><a href="">页面3</a></li>
+        <li id="aa"></li>
+    </ul>
+
+    <div id="div4">
+        <img src="../gaoxiao.jpeg" alt="">
+        <div>哈!!哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
+    </div>
+</body>
+
+</html>

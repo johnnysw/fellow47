@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>firstChild</title>
+    <style>
+        #ul1 li {
+            float: left;
+            width: 60px;
+            margin-right: 50px;
+            border-right: 1px solid #000;
+        }
+
+        #ul1 li:last-child {
+            border: none;
+        }
+
+        #ul1 :last-child {
+            border: none;
+        }
+        /* n 从 0 开始 */
+        /* #ul1 li:nth-child(2n) {
+            color:crimson
+        } */
+
+        /* 从 1 开始数 */
+        #ul1 li:nth-child(1) {
+            color:crimson
+        }
+
+        /* #div1 p:nth-child(2){
+            color: crimson;
+        } */
+        
+        #div1 p:nth-of-type(2){
+            color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <ul id="ul1">
+        <li>前端1</li>
+        <li>Java2</li>
+        <li>C++3</li>
+        <li>产品4</li>
+        <li>Ui设计5</li>
+        <li>考研6</li>
+    </ul> -->
+
+    <div id="div1">
+        <div>div1</div>
+        <p>p1</p>
+        <div>div2</div>
+        <p>p2</p>
+        <p>p3</p>
+    </div>
+</body>
+
+</html>

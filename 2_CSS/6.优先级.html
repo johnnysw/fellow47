@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优先级</title>
+    <link rel="stylesheet" href="../bb.css">
+    <style>
+        /* 当优先级相同的时候，后面的覆盖前面的。当优先级不同的时候，优先级高的生效 */
+        /* #h1 {
+            color: wheat;
+        } */
+
+        /* h1 {
+            color: crimson;
+        } */
+        /* #div1 .aa p{
+            background: springgreen !important;
+            color: thistle;
+        }
+        .aa .bb .cc{
+            color: springgreen;
+        } */
+        #div1{
+            /* background: rosybrown; */
+            color: blue;
+        }
+    </style>
+   
+</head>
+
+<body>
+    <h1 id="h1" style="color: teal;">这是标题一呀</h1>
+    <div id="div1">111
+        <p>p1p1p1</p>
+        <div>divdiv</div>
+    </div>
+    
+    <!-- <div>222</div>   -->
+
+    <script>
+        // 通过 js 代码 去设置或更改样式的时候，是通过内联来实现的
+        // document.getElementById('div1').style.background = 'red';
+        // document.getElementById('div1').style.color = 'yellow'
+    </script>
+</body>
+
+</html>

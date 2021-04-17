@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>长度</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 像素表示法 */
+        #div1 {
+            background: rgb(134, 64, 64);
+            width: 800px;
+            height: 100px;
+            font-size: 30px;
+        }
+
+        /* em   : 1em = 父元素的字体大小 */
+        #div2 {
+            background: rgb(86, 180, 73);
+            width: 10rem;
+
+            height: 1rem;
+            /* */
+        }
+
+        #div3 {
+            background: rgb(73, 84, 180);
+            width: 10em;
+            height: 1em;
+            /* 30px */
+            font-size: 20px;
+        }
+
+        html {
+            font-size: 50px;
+        }
+
+        #div3 p {
+            background: sandybrown;
+            width: 10em;
+            height: 1em;
+            /* 20px */
+        }
+
+        /* rem (root)  : 1rem = 根元素(html)的字体大小px */
+
+        /* vw/vh(view width) */
+        #div4 {
+            background: rgb(134, 39, 39);
+            /* 100是百分比的意思 */
+            width: 80vw;
+            height: 50px;
+        }
+        body{
+            width: 1000px;
+        }
+
+        #div5{
+            /* % : 根据父元素宽度/高度来计算 */
+            width: 80vw;
+            max-width: 800px;
+            min-width: 600px;
+            background: rgb(30, 104, 55);
+            height: 50px;
+          
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <div id="div3">
+            <p></p>
+        </div>
+    </div>
+    <div id="div2"></div>
+    <div id="div4"></div>
+    <div id="div5"></div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景</title>
+    <style>
+        #div1{
+            margin: 20px;
+            padding: 30px;
+            border: 10px dotted red;
+            height: 1200px;
+            /* background是复合属性:能写一行不分开写 */
+            /* background: #000; */
+
+            /* background-image: url(../gaoxiao.jpeg);
+            background-color: rgb(105, 91, 91);
+            background-repeat: no-repeat; */
+
+            
+            background: url(../gaoxiao.jpeg)  no-repeat 100px 100px;
+            background-color: springgreen;
+            background-origin: content-box;
+            /* background-size: 100px 100px; */
+
+          
+        }
+        #div1 button{
+            width: 200px;
+            height: 80px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+      <button>hahaha😤</button>
+    </div>
+</body>
+</html>

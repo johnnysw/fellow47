@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css选择器</title>
+    <style>
+        /* 通配符（所有的可见元素都会被选中） */
+        * {
+            /* color: aqua; */
+            /* border: 1px solid #000; */
+        }
+
+        /* 标签选择器 */
+        h1 {
+            background: rosybrown;
+        }
+
+        /* id选择器 */
+        #title1 {
+            color: skyblue;
+        }
+
+        /* 类选择器 */
+        .aa {
+            background: wheat;
+        }
+
+        /* id  后代选择器 标签 */
+        /* 空格：后代选择器 */
+        #div1 p {
+            background: yellow;
+        }
+        
+        /* 子代选择器：只会选择亲儿子那一代 */
+        #div1>p {
+            color: teal;
+        }
+
+        /* 相邻选择器：选中下面的紧贴着的那个 */
+        #div1+h2 {
+            background: tomato;
+        }
+
+        /* 兄弟选择器：选中下面同级的所有选择器所选中的元素 */
+        #div1~h2 {
+            color: violet;
+        }
+
+        /* 属性选择器 1： 有 name 属性的会被选中 */
+        input[name] {
+            background: wheat;
+        }
+
+        /*  属性选择器 1： 有 name 属性的值是password的会被选中 */
+        input[name="password"] {
+            border: thistle 5px solid;
+        }
+        .haha{
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input>
+    <h1 id="title1">我还是标题 1</h1>
+    <h1>我还是标题 11</h1>
+    <h2>我是标题 2</h2>
+
+    <ul>
+        <li class="aa">item1</li>
+        <li class="aa">item2</li>
+        <li>item3</li>
+    </ul>
+
+    <h2>44444</h2>
+    <div id="div1">
+        <p>p1p1p1</p>
+        <div>
+            <p>p2p2p2</p>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <div></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <p>111</p>
+    <h2>22222</h2>
+    <h2>333333</h2>
+
+    <input type="text" name="username" />
+    <input type="text" name="password" value="12321232123" />
+
+</body>
+
+</html>

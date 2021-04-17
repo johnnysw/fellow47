@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器</title>
+    <style>
+        .a1{
+            color:black;
+        }
+        /* 决定当被选中的元素处于悬停状态的样式 */
+        .a1:hover{
+            color: coral;
+        }
+
+        #ul1 li{
+            font-size: 20px;
+            font-style: italic;
+        }
+        #ul1 li.active{
+           color: cyan;           
+        }
+        /* 这么写没必要 */
+        .aa>#div1{
+            background: #000;
+        }
+
+    </style>
+</head>
+<body>
+     <a class="a1" href="#">点我呀，😬 <span>111111</span> </a>
+
+     <ul id="ul1">
+         <li class="active">001</li>
+         <li>002</li>
+         <li>003</li>
+     </ul>
+
+     <div class="aa">
+         <div id="div1">div1</div>
+     </div>
+</body>
+</html>

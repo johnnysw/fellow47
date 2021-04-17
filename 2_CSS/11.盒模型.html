@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒模型</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+
+        /* 标准盒模型：宽高是设置在 content 区域上的， */
+        #div1 {
+            width: 300px;
+            height: 300px;
+            background: rgb(146, 55, 55);
+
+            /* 内边距：让元素内的内容距离元素的边有一定的距离 */
+            padding: 30px;
+            margin: 50px;
+            border: 10px solid #000;
+            display: inline;
+        }
+
+        #div2 {
+            width: 200px;
+            height: 200px;
+            background: rgb(104, 163, 96);
+
+            /* 外边距：把其他元素从该元素身边推开 */
+            margin: 50px;
+
+        }
+
+        #div3 {
+            width: 300px;
+            height: 100px;
+            background: rgb(60, 113, 117);
+            padding: 20px;
+
+            border: solid 10px #000;
+
+            /*  怪异盒模型：宽高是设置在 bordr 区域上的，  */
+            box-sizing: border-box;
+        }
+
+        #div4 {
+            width: 600px;
+            height: 100px;
+            background: rgb(197, 77, 171);
+        }
+
+        #div4 span {
+            border: 2px solid #000;
+            background: rgb(207, 216, 125);
+            /* 行元素不能设置宽高 */
+            width: 100px;
+            height: 20px;
+
+            /* 行元素：padding 左右生效，上下不生效 */
+            padding: 20px;
+
+            /* margin 左右生效，上下不生效 */
+            margin: 20px;
+
+            /* block:以块级元素的方式来展现 */
+            /* display: block; */
+
+            /* 既能设置宽高，又能与其他的行级元素共处于一行 */
+            display: inline-block;
+
+            
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">这是一大段文字呀呀呀呀呀呀！！！</div>
+    <div id="div2"></div>
+
+    <div id="div3">这是一大段文字呀呀呀呀呀呀！！！</div>
+
+    <div id="div4">
+        <span>hello，哈哈哈</span><span>哼哼，啦啦</span><span>hello，哈哈哈</span><span>哼哼，啦啦</span><span>hello，哈哈哈</span><span>哼哼，啦啦</span>
+    </div>
+
+    <img src="../gaoxiao.jpeg" alt=""><span>1111</span>
+
+
+
+</body>
+
+</html>

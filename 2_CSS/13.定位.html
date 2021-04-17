@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+        }
+
+        #div1 {
+            background: rgb(179, 58, 58);
+        }
+
+        #div2 {
+            background: rgb(106, 156, 104);
+            /* 定位后可以通过（top left right bottom） */
+            /*static：就相当于没定位  */
+            /* position: static; */
+
+            /* 相对定位：原来所占的空间不释放,新位置是相对于原来的位置来计算 */
+            /* position: relative; */
+            /* top: -50px;
+            left: 30px; */
+            /* bottom: 50px; */
+
+            /* 绝对定位：该元素原有所在的空间会被释放，新位置根据最近已定位父元素来计算 */
+            position: absolute;
+            top: 50px;
+            left: 30px;
+            /* right: 50px; */
+
+            z-index: 999;
+
+        }
+
+        #div3 {
+            position: absolute;
+            top: -50px;
+            left: 100px;
+            background: rgb(58, 141, 179);
+            /* z-index:-1 ; */
+        }
+
+        body {
+            /* width: 700px; */
+            height: 2800px;
+            /* margin: 100px;
+            border: 5px solid #000; 
+            background: #000; */
+        }
+
+        #outer {
+            /* position: relative; */
+            top: 50px;
+            width: 500px;
+            height: 500px;
+            background: #ccc;
+            /* margin: 50px; */
+
+        }
+
+        #fix {
+            width: 50px;
+            height: 50px;
+            background: #ff0000;
+
+            /* 固定定位:空间释放，相对于可视窗口来计算位置 */
+            position: fixed;
+            right: 0;
+            bottom: 50px;
+        }
+
+        #banner {
+            height: 100px;
+        }
+
+        #nav {
+            height: 80px;
+            background: #000;
+
+            /* 粘性定位(relative + fixed)： */
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner"></div>
+    <div id="outer">
+        <div class="box" id="div1">item1</div>
+        <div class="box" id="div2">item2</div>
+        <div class="box" id="div3">item3</div>
+    </div>
+
+    <div id="nav"></div>
+
+    <div id="fix"></div>
+    122123432345
+</body>
+
+</html>

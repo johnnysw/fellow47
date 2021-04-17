@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 600px;
+            height: 600px;
+            background: #ccc;
+
+            /* 让该元素是弹性盒子 */
+            display: flex;
+
+            /* 决定主轴的方向 */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+
+            /* 设置交叉轴（决定了元素换行的方向）的方向 */
+            /* flex-wrap: wrap; */
+            /* flex-wrap: wrap-reverse; */
+
+            /* justify-content：决定了弹性项目沿着主轴的方向怎么排列 */
+            /* 两端对齐 */
+            /* justify-content: space-between; */
+
+
+            /* align-items:决定了弹性项目沿着交叉轴的方向怎么排列 */
+            /* align-items: stretch ; */
+            align-items: center;
+
+
+            /* align-content(当只有一条主轴的时候没用):决定了主轴在交叉轴的方向的分布方式 */
+            /* align-content: center; */
+
+
+
+
+        }
+
+        .item {
+            /* 当父元素的宽度不够用的时候只压缩弹性项目的 content 区域 (极限是内容的宽度)*/
+            /* margin: 0 20px; */
+            /* padding: 0 20px; */
+            /* border: 5px solid #000; */
+            width: 150px;
+            height: 100px;
+            /* flex-grow: 1; */
+
+            /*  */
+
+            flex-shrink: 1;
+        }
+
+        #item1 {
+            background: rgb(172, 114, 114);
+        }
+
+        #item2 {
+            /* 决定了该项目在主轴方向占据的空间 */
+            flex-basis: 200px;
+
+            width: 300px;
+            font-size: 25px;
+            height: 200px;
+            background: rgb(130, 170, 77);
+            /* align-self: start; */
+            /* flex-grow: 2; */
+            /* flex-shrink: 2; */
+
+            order: -1;
+
+        }
+
+        #item3 {
+            background: rgb(75, 187, 187);
+        }
+
+        #item4 {
+            background: rgb(158, 34, 102);
+        }
+
+        #item5 {
+            background: rgb(121, 172, 114);
+        }
+
+        #item6 {
+            background: rgb(134, 114, 172);
+        }
+
+        /* 
+            负债：300
+            1*150 + 2*300 +  1*150 + 1*150 + 1*150 = 1200
+
+          1:  (1*150/1200)*300 = 50
+          2:  (2*300/1200)*300 = 150
+        
+
+         */
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <div class="item" id="item1">item 1</div>
+        <div class="item" id="item2">item 2 item 2 item 2</div>
+        <div class="item" id="item3">item 3</div>
+        <div class="item" id="item4">item 4</div>
+        <div class="item" id="item5">item 5</div>
+        <!-- <div class="item" id="item6">item 6</div> -->
+    </div>
+</body>
+
+</html>

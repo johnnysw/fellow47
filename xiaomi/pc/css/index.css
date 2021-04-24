@@ -1,0 +1,136 @@
+/* 公共部分 */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 1200px;
+  /* border: red solid 2px; */
+  display: flex;
+  justify-content: space-between;
+}
+
+/* header 开始 */
+header {
+  height: 40px;
+  background: #333333;
+}
+
+header a {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+header ul li {
+  float: left;
+}
+
+/* header ul li span{
+    color: #ffffff;
+    font-size: 12px;
+    margin: 0 20px;
+}
+header ul li:last-child span{
+    display: none;
+} */
+
+header ul li::after {
+  content: "|";
+  color: #ffffff;
+  font-size: 12px;
+  margin: 0 6px;
+}
+
+header ul li:last-child::after {
+  content: none;
+}
+
+/* header 结束 */
+
+/* nav 开始 */
+
+/* nav 结束 */
+nav {
+  height: 100px;
+  background: #ccc;
+}
+
+nav img.logo {
+  width: 187px;
+  height: 55px;
+}
+
+nav ul {
+  width: 470px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .nav-list li a {
+  color: #212121;
+  font-size: 18px;
+}
+
+nav .nav-list li:hover a {
+  color: #e94400;
+}
+
+/* banner 开始 */
+
+/* #banner img {
+  margin-left: -500px;
+}
+#banner {
+  position: relative;
+}
+#banner h2 {
+  position: absolute;
+  top: 200px;
+} 
+*/
+
+#banner {
+  height: 640px;
+  background: url(../images/banner.jpg) center;
+  text-align: center;
+  overflow: hidden;
+}
+
+#banner h2 {
+  font-size: 54px;
+  color: #ffffff;
+  font-weight: 300;
+  margin-top: 190px;
+}
+#banner button {
+  color: #fff;
+  font-size: 24px;
+  background: #f93f2b;
+  width: 260px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 5px;
+  margin-top: 36px;
+  border: none;
+  outline: none;
+}
+#banner button:hover{
+    background: rgb(214, 54, 36);
+    cursor: pointer;
+}
+#banner button:hover + h3{
+    /* opacity: 1;   */
+    display: block;
+}
+#banner h3{
+    /* 元素不占空间（相当于 html 当中没有这个元素） */
+    display: none;
+    /* 元素占空间 */
+    /* visibility: hidden; */
+
+    /* opacity: 0; */
+}
+/* banner 结束 */

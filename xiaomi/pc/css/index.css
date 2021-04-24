@@ -283,7 +283,7 @@ main .section {
 
 /* footer  开始 */
 footer {
-  margin-top: 50px;
+  margin: 100px 0 60px 0;
 }
 footer img {
   width: 46px;

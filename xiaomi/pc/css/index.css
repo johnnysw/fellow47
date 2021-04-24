@@ -54,7 +54,6 @@ header ul li:last-child::after {
 /* nav 结束 */
 nav {
   height: 100px;
-  background: #ccc;
 }
 
 nav img.logo {
@@ -74,7 +73,64 @@ nav .nav-list li a {
   font-size: 18px;
 }
 
-nav .nav-list li:hover a {
+nav .nav-list li a:hover {
+  color: #e94400;
+}
+nav .sub-toggle {
+  position: relative;
+}
+nav .sub-toggle>a{
+    padding-bottom: 30px;
+}
+nav .sub-toggle:hover .sub-menu {
+  display: flex;
+}
+nav .sub-menu {
+  flex-direction: column;
+  align-items: stretch;
+  position: absolute;
+  width: 150px;
+  height: 80px;
+  padding: 10px 0;
+  background: #fff;
+  border: 1px #e5e5e5 solid;
+  border-radius: 2px;
+  left: -60px;
+  top: 40px;
+
+  display: none;
+}
+nav .sub-menu:hover{
+    display: flex;
+}
+nav .sub-menu::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border: 1px #e5e5e5 solid;
+  border-right: none;
+  border-bottom: none;
+  transform: rotate(45deg);
+  position: absolute;
+  top: -6px;
+  left: 70px;
+}
+nav .sub-menu li {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .sub-menu li:hover {
+  background: #eeeeee;
+}
+nav .sub-menu li a {
+  font-size: 16px;
+}
+nav .sub-menu li:hover a {
   color: #e94400;
 }
 
@@ -117,20 +173,54 @@ nav .nav-list li:hover a {
   border: none;
   outline: none;
 }
-#banner button:hover{
-    background: rgb(214, 54, 36);
-    cursor: pointer;
+#banner button:hover {
+  background: rgb(214, 54, 36);
+  cursor: pointer;
 }
-#banner button:hover + h3{
-    /* opacity: 1;   */
-    display: block;
+#banner button:hover + h3 {
+  /* opacity: 1;   */
+  display: block;
 }
-#banner h3{
-    /* 元素不占空间（相当于 html 当中没有这个元素） */
-    display: none;
-    /* 元素占空间 */
-    /* visibility: hidden; */
+#banner h3 {
+  /* 元素不占空间（相当于 html 当中没有这个元素） */
+  display: none;
+  /* 元素占空间 */
+  /* visibility: hidden; */
 
-    /* opacity: 0; */
+  /* opacity: 0; */
 }
+/* #banner .triangle{
+    border-width: 0;
+} */
+/* #banner .triangle{
+    width: 0;
+    border-top: 50px red solid;
+} */
+
+#banner .triangle {
+  /* width: 50px;
+   height: 50px;
+   background: #000;
+   transform: rotate(45deg);
+   position: absolute;
+   top: -28px;
+   left: 50px;
+   z-index: 9; */
+
+  width: 0;
+  height: 0;
+  border: 40px solid;
+  border-color: orange blue red green;
+  border-color: transparent transparent red;
+}
+#banner .box {
+  /* position: relative; */
+}
+#banner .aa {
+  /* height: 50px;
+    position: relative;
+    z-index: 10;
+    background: rgb(151, 43, 43); */
+}
+
 /* banner 结束 */

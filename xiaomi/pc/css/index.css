@@ -79,8 +79,8 @@ nav .nav-list li a:hover {
 nav .sub-toggle {
   position: relative;
 }
-nav .sub-toggle>a{
-    padding-bottom: 30px;
+nav .sub-toggle > a {
+  padding-bottom: 30px;
 }
 nav .sub-toggle:hover .sub-menu {
   display: flex;
@@ -100,8 +100,8 @@ nav .sub-menu {
 
   display: none;
 }
-nav .sub-menu:hover{
-    display: flex;
+nav .sub-menu:hover {
+  display: flex;
 }
 nav .sub-menu::before {
   content: "";
@@ -224,3 +224,81 @@ nav .sub-menu li:hover a {
 }
 
 /* banner 结束 */
+
+/* main 开始 */
+main .section {
+  box-sizing: border-box;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px #e5e5e5 solid;
+  margin-top: -80px;
+}
+.section .bg {
+  display: block;
+  width: 360px;
+  height: 180px;
+  background: url(../images/bg1.png);
+  color: #ffffff;
+  font-size: 33px;
+  box-sizing: border-box;
+  padding: 30px;
+}
+.section li:nth-child(2) .bg {
+  background: url(../images/bg2.png);
+}
+.section .bg h5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.content {
+  border-bottom: 1px solid #e5e5e5;
+  margin: 20px;
+  padding-bottom: 10px;
+}
+.content li {
+  margin-bottom: 20px;
+}
+
+.content .main {
+  color: orange;
+  border-right: 1px solid #333;
+  padding-right: 20px;
+}
+
+.content span {
+  padding: 0 20px;
+}
+.content .desc {
+  margin-left: 20px;
+  color: #333333;
+}
+
+.section li .more {
+  display: block;
+  text-align: center;
+  color: #fd3911;
+}
+
+/* main 结束 */
+
+/* footer  开始 */
+footer {
+  margin-top: 50px;
+}
+footer img {
+  width: 46px;
+  height: 46px;
+  float: left;
+}
+footer ul {
+  margin-left: 50px;
+  display: flex;
+}
+footer ul li::after {
+  content: "|";
+  padding: 0 10px;
+}
+footer ul li:last-child:after{
+    content: none;
+}
+/* footer 结束 */

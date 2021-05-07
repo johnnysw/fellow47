@@ -1,0 +1,10 @@
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex-between{
+  justify-content: space-between;
+}
+.wrapper{
+  margin: 0 .20834rem;
+}

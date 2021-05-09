@@ -1,10 +1,28 @@
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 .flex {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
-.flex-between{
+.flex-center{
+  justify-content: center;
+}
+.flex-between {
   justify-content: space-between;
 }
-.wrapper{
-  margin: 0 .20834rem;
+.flex-around{
+  justify-content: space-around;
+}
+.flex-evenly{
+  justify-content: space-evenly;
+}
+.wrapper {
+  margin: 0 0.20834rem;
+}
+.divider {
+  border-top: 0.1666rem solid rgb(245, 245, 245);
 }

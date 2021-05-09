@@ -1,6 +1,11 @@
 /* header */
 header {
   background: #f2f2f2;
+  -webkit-box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%);
+  box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%);
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 #search {
   height: 0.875rem;
@@ -13,17 +18,123 @@ header {
   color: rgba(0, 0, 0, 0.3);
   border-radius: 0.04rem;
   width: 5.4rem;
-  height: .6rem;
+  height: 0.6rem;
   color: aquamarine;
   background: url(../imgs/search.png) no-repeat;
-  background-size: .6rem;
-  text-indent: .8rem;
+  background-size: 0.6rem;
+  text-indent: 0.8rem;
 }
-#search input::placeholder{
+#search input::placeholder {
   color: aquamarine;
 }
 #search .user img {
   width: 0.425rem;
 }
+nav li {
+  height: 0.6rem;
+  border-bottom: 2px solid rgba(237, 91, 0, 0);
+}
+nav li.active,
+nav li.active > a {
+  border-color: rgb(237, 91, 0);
+}
+nav a {
+  color: #747474;
+  font-size: 0.27rem;
+}
+.arrow-down {
+  width: 0.4rem;
+}
 
 /* header */
+
+/* banner */
+#banner {
+  margin-top: 1.515rem;
+}
+.carousel img {
+  width: 100%;
+}
+#banner li {
+  width: calc(100% / 5);
+}
+#banner li img {
+  width: 100%;
+}
+
+/* banner */
+
+/* main */
+.more {
+  height: 1.04rem;
+  text-align: center;
+  line-height: 1.04rem;
+}
+.more a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+main {
+  background: #fff;
+  margin-bottom: 1rem;
+}
+.hot img {
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+}
+.hot img.left {
+  padding-right: 0.02rem;
+}
+.hot img.right {
+  padding-bottom: 0.02rem;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.products ul {
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #000;
+}
+.products li {
+  width: 48%;
+  text-align: center;
+}
+.products li img {
+  width: 100%;
+}
+
+.goods img,
+.goods .info {
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+.goods li:nth-child(2n) img {
+  float: right;
+}
+
+/* main */
+
+/* footer */
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #f2f2f2;
+
+}
+footer li {
+  width: .4rem;
+  flex: 1;
+}
+footer a{
+  flex-direction: column;
+}
+footer li img {
+  width: .4rem;
+}
+
+/* footer */

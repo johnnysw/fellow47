@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+  </ul>
+  <script>
+    // function fn1(p1) {
+    //   setTimeout(function () {
+    //     console.log(p1);
+    //   }, 1000);
+    // }
+    // fn1('haha')
+
+    // setTimeout(function () {
+    //   console.log('heihei');
+    // }, 2000);
+
+    // setInterval(function () {
+    //   console.log('heihei');
+    // }, 500);
+
+    // 闭包：函数嵌套形成闭包，内部函数引用外部函数中的变量，函数调用以后，变量不会被释放
+
+    for (var i = 0; i < 5; i++) {
+      (function (index) {
+        setTimeout(function () {
+          console.log(index);
+        }, 2000);
+      })(i)
+    }
+    // console.log('res', i);
+    var aLi = document.getElementsByTagName('li')
+    console.log(aLi);
+    for (var i = 0; i < aLi.length; i++) {
+      (function (index) {
+        aLi[index].onclick = function () {
+          console.log(index);
+        }
+      })(i)
+    }
+
+    // 函数立即调用
+    // (function fn3(n) {
+    //   console.log(n);
+    // })(666)
+
+    var aa = 666
+    function fn7() {
+      var aa
+      console.log(aa);
+      aa = 777
+    }
+    fn7()
+
+
+
+  </script>
+</body>
+
+</html>

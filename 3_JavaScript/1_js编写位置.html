@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn1 {
+            background: #f00;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 内联 -->
+    <button onclick="alert('哈哈')">这是按钮</button>
+
+    <button id="btn1">另一个按钮</button>
+
+
+    <script>
+        // 内部
+        var btn1 = document.getElementById('btn1');
+        btn1.onclick = function () {
+            alert('hehe');
+        };
+    </script>
+
+    <!-- 外部 -->
+    <script src="1_demo.js"></script>
+</body>
+
+</html>

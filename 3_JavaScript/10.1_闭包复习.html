@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点我</button>
+    <script>
+        // 闭包：外部函数中声明了内部函数，在内部函数中引用了外部函数中的局部变量，当外部函数
+        // 调用完毕之后，局部变量不释放
+
+        /* function outer(a){
+            function inner(){
+                var b = a + 4;
+                console.log(b);
+            }
+            return inner;
+        }
+
+        var b = outer(5);
+        b(); */
+
+
+        // function outer(a){
+        //     function inner(){
+        //         var b = a + 4;
+        //         console.log(b);
+        //     }
+        //     return inner;
+        // }
+
+
+        // for(var i=0; i<3; i++){
+        //     setTimeout(function(){
+        //         outer(i)();
+        //     }, 1000);
+        // }
+
+        // var fn1 = function fn2(){
+        //     console.log('haha');
+        //     fn2();
+        // }
+
+        // fn2();
+
+        // (function (){
+        //     console.log('haha');
+        // })();
+
+        /* var aa = function(){
+            console.log('haha');
+        }(); */
+
+        // 函数立即调用的应用场景
+
+        // 轮播图
+        (function () {
+            var a = 5;
+            var b = a + 4;
+            console.log(b);
+        })();
+
+
+        // 导航菜单
+        (function () {
+            var a = "abc";
+            console.log(a);
+        })();
+
+
+
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function(){
+            var a = 5;
+            setTimeout(function(){
+                console.log(a);
+            }, 2000);
+        };
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

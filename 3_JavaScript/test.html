@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">bian</button>
+    <div id="div1">true</div>
+    <script>
+        function fn1() {
+            var aa = 666
+            function fn2() {
+                console.log(aa);
+                return aa
+            }
+            return fn2()
+        }
+
+        var oBtn = document.getElementById('btn')
+        var oDiv1 = document.getElementById('div1')
+        oBtn.onclick = function () {
+            oDiv1.innerText = !oDiv1.innerText
+        }
+        
+        console.log(fn1());
+    </script>
+</body>
+
+</html>

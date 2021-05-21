@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数声明
+        // test();
+
+        // function test(name, age){
+        //     // console.log(name, age, arguments[2]);
+        //     console.log(arguments.length);
+        // }
+
+        // test('lisi', 23, '男');
+
+        // console.log(test.length);
+
+        // 函数表达式
+        // test1();
+        // var test1 = function(){
+        //     console.log('hehe');
+        // }
+        // var test1 = new Function("console.log('hehe')");
+
+        /* function test(){
+            var a;
+            console.log(a);
+            a = 5;
+        }
+        test(); */
+
+        // function test1(){
+        //     /* var test2 = function(){
+        //         console.log('haha');
+        //     }; */
+        //     return function(){
+        //         console.log('haha');
+        //     };
+        // }
+
+        // var test3 = test1();
+        // test3();
+
+        // 函数式编程：就是将js中的函数当成数值赋值给变量或当成函数的参数传给另外一个函数，或当成函数的返回值回返回
+        // 编程范式
+        // 1. 面向过程编程
+        // 2. 面向对象编程
+        // 3. 泛型编程
+        // 4. 函数式编程
+        // 5. 可微分编程
+
+        // function test(a){
+        //     a(function(){
+        //         console.log('haha');
+        //     });
+        // }
+
+        // test(function(b){
+        //     b();
+        // });
+
+        function test(a){
+            var test2 = function(){
+                return function(b){
+                    console.log( a() + 4 );
+                }
+            };
+            return test2;
+        }
+
+        test(function(){
+            return 5;
+        })()();
+
+        // test3()();
+        
+    </script>
+</body>
+</html>

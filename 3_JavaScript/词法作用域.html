@@ -1,0 +1,16 @@
+<script>
+    //词法作用域: 指函数在定义(或声明)它们的作用域里运行，
+    //而不是在执行(或调用)它们的作用域里运行
+    var value = 1;
+
+    function foo() {
+        console.log(value);
+    }
+
+    function bar() {
+        var value = 2;
+        foo();
+    }
+
+    bar(); //输出多少？ 
+</script>

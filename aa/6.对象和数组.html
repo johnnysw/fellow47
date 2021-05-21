@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // 数组  [99,100,120,110]
+    var arr = [11, 'haha', undefined, null, true]
+    // console.log(arr);
+    // console.log(arr[1]);
+    // console.log(arr.length);
+
+
+    var arr2 = new Array(5, 4, 3)
+    // console.log(arr2);
+
+    // 对象：(属性，方法)
+    var liushuhua = {
+      name: 'liushuhua',
+      age: 16,
+      sex: 'nan',
+      cook: function (meat) {
+        console.log(this);
+        console.log('烤' + meat);
+        setTimeout(function () {
+          console.log(this);
+        }, 100);
+      },
+      boyFriend: {
+        name: 'zhao6',
+        preGirlFriends: [
+          { name: 'xiaohua' },
+          { name: 'liuneng' }
+        ]
+      }
+    }
+    // console.log(liushuhua.boyFriend.name);
+    // liushuhua.school = 'xxx 幼儿园'
+    // liushuhua.sex = 'nv'
+    console.log(liushuhua.cook('猪蹄'));
+
+
+
+    var zhaoliming = new Object();
+    // zhaoliming.name = 'zhao6'
+    // console.log(zhaoliming);
+
+
+    // 类 该写法是 es6 的
+    // 定义一个类
+    class Person {
+      constructor(name, age) {
+        // this是对当前对象的引用
+        this.name = name,
+          this.age = age
+      }
+
+      eat() {
+        console.log(this.name + ' is eating');
+      }
+    }
+
+    // 根据类创建对象
+    // var p1 = new Person('lisi', 0)
+    // var p2 = new Person('liuneng', 8)
+    // console.log(p1, p2);
+    // p1.eat()
+    // p2.eat()
+
+
+    function fn3() {
+      console.log(this);
+    }
+    window.fn3()
+
+    // console.log(arr, window.arr);
+
+
+  </script>
+</body>
+
+</html>

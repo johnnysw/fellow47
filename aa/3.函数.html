@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 当一段代码要多次使用的时候，可以考虑把这段代码封装成一个函数
+    // 定义函数 (形参)
+
+
+    // 函数提升
+    // fn1('赵黎明')
+    // fn1('韩小伟')
+    // console.log(fn1);
+    // 函数声明
+    function fn1(param1) {
+      // 函数体：
+      console.log('大家好，我叫' + param1);
+    }
+
+    // 函数表达式:不存在函数提升
+    // fn2('赵黎明')
+    // console.log(fn2);
+    // var fn2 = function (param1) {
+    //   console.log('大家好，我叫' + param1);
+    // }
+
+    // // 变量提升
+    // console.log(bb);
+    // var bb = 666
+    // // 相当于
+    // var bb
+    // console.log(bb);
+    // bb = 666
+
+    // var cc = 'hello'
+
+
+    // 函数作用域
+
+
+    // function fn3() {
+    //   // 函数内部会形成局部作用域
+    //   var cc = 'word'
+    //   console.log(cc);
+    // }
+
+    // fn3()
+    // console.log(cc);
+
+
+    function fn3(p1, p2, p3) {
+
+      // console.log(arguments[0], arguments[1]);//可以通过arguments，来接到该函数的所有实参
+
+      // console.log(p1, p2, p3);
+
+
+      // 遍历数组中的所有元素
+      // for (var i = 0; i < arguments.length; i++) {
+      //   console.log(arguments[i]);
+      // }
+    }
+
+    // fn3(1, 2, 3, 4)
+
+
+
+    // 定义一个函数，求n! n*n-1*n-2*****1
+    // n! n！*（n-1）！
+
+
+    // 求阶乘
+    // function fn4(n) {
+    //   var result = 1
+    //   for (var i = n; i >= 1; i--) {
+    //     result *= i
+    //   }
+    //   // console.log(result);
+    //   return result
+    // }
+
+    // 只要用到递归，一定要写出口（特别的情况）
+    // function fn4(n) {
+    //   if (n === 1) return 1
+    //   return n * fn4(n - 1)
+    // }
+    // console.log(fn4(4));
+
+
+    // 求斐波那契数列  1 1 2 3
+
+    // function fib(n) {
+    //   if (n === 1 || n === 2) return 1
+    //   return fib(n - 1) + fib(n - 2)
+    // }
+    // console.log(fib(1));
+
+    // var dd = fn4(3)
+    // console.log(dd);
+    // function fn5(n, p1) {
+    //   // console.log(fn4(n));
+    //   result = fn4(n) + p1
+    //   console.log(result);
+    // }
+    // fn5(3, 1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

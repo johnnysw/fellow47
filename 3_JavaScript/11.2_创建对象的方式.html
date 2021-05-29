@@ -1,0 +1,202 @@
+<script>
+    // 1. new Object()
+    // var o1 = new Object();
+    // o1.name = 'lisi';
+    // o1.age = 23;
+    // o1.sayHello = function () {
+    //     console.log('My name is lisi');
+    // };
+
+    // console.log(  o1.name  );
+    // o1.sayHello();
+
+    // 2. {} 对象直接量/字面量（literals）
+    // var o2 = {
+    //     name: 'wangwu',
+    //     age: 26,
+    //     'first name': 'wang',
+    //     // sayHello: function(){}
+    //     sayHello() {
+
+    //     }
+    // };
+
+    // console.log(    o2['name']  );  // o2.name 
+
+    // var str = "name";
+    // console.log(o2[str]);
+
+    // console.log(o2["first name"]);
+    // property
+    // for(var p in o2){
+    //     console.log(p + "：" + o2[p]);
+    // }
+
+    // 3. new class
+    // class Person{
+    //     name;
+    //     age = 23;
+
+    //     constructor(uname, age){
+    //         this.name = uname;
+    //         this.age = age;
+    //     }
+
+    //     sayHello(){
+
+    //     }   
+    // }
+
+    // var p1 = new Person('lisi', 27);
+    // console.log(p1);
+    // 3.1 ES5之前的定义类的方式
+    // 类的定义：具有相同的属性和方法的对象的集合
+    // this: 永远指向当前对象
+
+    // var aa = 555;
+    // console.log(window.aa);
+
+    // function Person(name, age){
+    //     this.name = name;
+    //     this.age = age;
+    //     // this._gender = 'female';
+    //     var _gender = 'female';
+    //     this.sayHello = function(){
+    //         console.log('haha');
+    //     };
+    // }
+
+    // var p1 = new Person('lisi', 23);
+    // // p1._gender = 'male';
+    // console.log(p1._gender);
+
+    // Person('lisi', 23);
+
+    // console.log(name, age);
+    // sayHello();
+
+    // class Animal{
+    //     name;
+    //     constructor(name){
+    //         this.name = name;
+    //     }
+    // }
+
+    // class Dog extends Animal{
+
+    // }
+
+    // var dog1 = new Dog('dahuang');
+    // console.log(dog1.name);
+
+    /* function Animal(name){
+        this.name = name;
+        this.shout = function(){
+
+        };
+    } */
+
+    // function ClassA(sColor) {
+    //     this.color = sColor;
+    //     this.sayColor = function () {
+    //         alert(this.color);
+    //     };
+    // }
+
+    // function ClassB(sColor) {
+    //     ClassA.call(objB, sColor);
+    // }
+
+    // var objA = new ClassA("blue");
+    // var objB = new ClassB("red");
+    // // objA.sayColor();	//输出 "blue"
+    // objB.sayColor();	//输出 "red"
+    // objB.newMethod();
+
+    // var fn = function () {
+    //     console.log('haha');
+    // };
+    // 定义类：将属性放在类的构造函数中，而将方法放在类的原型中
+
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        // this.sayHello = fn;
+    }
+    Person.prototype.sayHello = function () {
+        console.log('haha');
+    }
+
+    function Student(){
+        Person.call(this); // 通过call继承属性
+    }
+
+    // Student.prototype = new Person();  // 通过prototype继承方法
+    Student.prototype = Object.create(Person.prototype);
+    // Student.prototype.__proto__ = Person.prototype
+    Student.prototype.constructor = Student;
+
+    // // 寄生组合方式
+
+    // var s1 = new Student();
+    // s1.sayHello();
+
+    // console.log(   s1.constructor   );
+
+    // 4. Object.create()
+    // 方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。
+    // 创建新对象o3,使用o1，提供o3的__proto__
+
+    // 原型：
+    // ①所有对象都有一个__proto__(隐式原型)属性，属性值是一个普通的对象
+    // ②所有函数都有一个prototype(原型)属性，属性值是一个普通的对象
+    // ③所有对象的__proto__属性指向它构造函数的prototype
+
+
+    // function Person(name, age){
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // Person.prototype.sayHello = function(xx){
+    //     console.log(xx);
+    // };
+
+    // var p1 = new Person();
+    // p1.name;
+
+    // p1.name => p1.__proto__.name => p1.__proto__.__proto__.name;
+   
+    // console.log(p1.__proto__  == Person.prototype);
+
+    // __proto__指向create函数的那个参数
+
+    // var o1 = {
+    //     name: 'lis',
+    //     age: 23
+    // }
+
+    // var o2 = Object.create(o1);
+    // o2.name = 'aaa'
+    // // console.log(o2.__proto__ == o1);
+
+    // var o3 = Object.create(o2);
+    // o3.name = 'bb';
+
+    // console.log(o1);
+    // console.log(o2);
+    // console.log(o3);
+
+    // 原型链：
+    // 当访问一个对象的某个属性时，会先在这个对象本身属性上查找，如果没有找到，
+    // 则会去它的__proto__隐式原型上查找，即它的构造函数的prototype，
+    // 如果还没有找到就会再在构造函数的prototype的__proto__中查找，
+    // 这样一层一层向上查找就会形成一个链式结构，我们称为原型链。
+
+
+    
+
+
+
+
+
+</script>

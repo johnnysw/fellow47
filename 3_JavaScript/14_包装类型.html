@@ -1,0 +1,71 @@
+<script>
+    // var a = "abc";
+    // console.log(a.toUpperCase());
+
+    // Boolean
+
+    var a = true;
+    // console.log(a);
+    a = new Boolean(a)
+    // console.log( a.toString()   );
+    // console.log( a.valueOf() );
+
+    var b = 1;
+
+    // console.log(  Boolean(b)  );
+
+
+    // console.log(   Number.MAX_VALUE   );
+
+    // var str = "Hello world! world"
+
+    // console.log(str.match('world'));
+
+    // var str="1 plus 2 equal 3"
+    // console.log(   str.match(/\d+/g)   );
+
+    var name = 'aaa bbb ccc';
+    uw = name.replace(/\b\w+\b/g, function (word) {
+        return word.substring(0, 1).toUpperCase() + word.substring(1);
+    });
+    // console.log(uw);
+
+
+    // var str="How are you doing today?"
+    // console.log(str.split("") );
+
+    // location.search = "?name=lisi&age=23"
+    // 1. 取 name=lisi&age=23
+    // 2. 按 & 进行 split => ["name=lisi", "age=23"]
+    // 3. 按 = 进行 splict => ["name", "lisi"]
+
+    var paramStr = location.search; //=>"?name=lisi&age=23"
+    paramStr = paramStr.substring(1); //=>"name=lisi&age=23"
+    var arr1 = paramStr.split("&"); //=>["name=lisi", "age=23"]
+    var obj = {};
+    for(var i=0; i<arr1.length; i++){
+        // arr1[i]=>"name=lisi", arr1[i].split("=") => ["name", "lisi"]
+        var arr2 = arr1[i].split("="); 
+        // obj.name = 'lisi'
+        obj[arr2[0]] = arr2[1];
+    }
+
+    // console.log(obj);
+
+    var str2 = " ab c ";
+    // console.log(str2.trim().length);
+
+    // function trim(str){
+    //     return str.replace(/(^\s*)|(\s*$)/g, "");
+    // }
+
+    // console.log(trim(str2)); // => "ab c"
+
+    String.prototype.trim = function (){
+        return this.replace(/(^\s*)|(\s*$)/g, "");
+    }
+
+    console.log(    str2.trim()   );
+    
+
+</script>

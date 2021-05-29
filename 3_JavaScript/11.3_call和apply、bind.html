@@ -1,0 +1,10 @@
+<script>
+    function test(name, age){
+        console.log(this);
+        console.log(name, age);
+    }
+    // test();
+    test.call(  {name: 'lisi'}, 'lisi', 23  );
+    // test.apply({name: 'lisi'},  ['lisi', 23]);
+    test.bind({name: 'lisi'})('lisi', 23);
+</script>

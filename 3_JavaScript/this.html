@@ -1,0 +1,45 @@
+<button id="btn">点我</button>
+<script>
+    // this永远指向【当前】对象
+    // var obj1 = {
+    //     name: 'lisi',
+    //     sayHello(){
+    //         console.log(this);
+    //     }
+    // }
+
+    // obj1.sayHello();
+
+    // function test(){
+    //     console.log(this);
+    // }
+    // test();
+
+    // window.setTimeout(function(){
+    //     console.log(this);
+    // }, 1000);
+
+    // var oBtn = document.getElementById('btn');
+    // oBtn.onclick = function(){
+    //     var _this = this;
+    //     setTimeout(function(){
+    //         console.log(_this);
+    //     }, 1000);
+    // };
+    var Animal = function (name) {
+        this.name = name;
+        this.shout = function () {
+
+        };
+    }
+
+    function Dog() {
+        this.name = 'dahuang';
+        this.xxx = Animal;
+        this.xxx();
+    }
+
+    var a1 = new Animal();
+    var d1 = new Dog();
+    d1.xxx();
+</script>

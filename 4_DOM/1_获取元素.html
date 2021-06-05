@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        <button id="btn">这是按钮</button>
+    </div>
+
+    <ul id="ul1">
+        <li class="aa bb">item 1</li>
+        <li class="aa bb">item 2</li>
+        <li>item 3</li>
+    </ul>
+
+    <div class="aa">111</div>
+    <div class="aa">222</div>
+
+    <ul id="ul2">
+        <li class="aa">li 1</li>
+        <li>li 2</li>
+    </ul>
+
+    <script>
+        // 获取元素的方法
+        // 1. getElementById
+        // var oBtn = document.getElementById('btn');
+        // oBtn.onclick = function(){
+
+        // };
+        // var oDiv1 = document.getElementById('div1');
+        // var oBtn = oDiv1.getElementById('btn');
+        // console.log(oBtn);
+
+        // 2. getElementsByTagName
+        // getElementsByTagName返回的是类数组对象
+        // var oUl1 = document.getElementById('ul1');
+        // var aLi = oUl1.getElementsByTagName('li');
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].style.background = 'red';
+        // }
+        // var arr = [4,5,6]
+        // arr.forEach(function(item, index, array){
+        //     console.log(item, index, array);
+        // });
+
+        // 3. getElementsByClassName: 注意在IE8-不支持
+        var oUl1 = document.getElementById('ul1');
+        // var aLi = oUl1.getElementsByClassName('aa');
+        var aLi = getByClassName('aa');
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].style.background = 'red';
+        }
+
+        /**
+         * 
+         * @param {string} className 要查找的类的名称
+         * @param {string} tagName 限定的标签名称
+         * @param {object} context 限定的搜索范围(上下文)
+         * @returns 查找到的元素的数组
+         */
+        function getByClassName(className, context) {
+            context = context || document;
+            var result = [];
+            // 判断当前浏览器是否支持getElementsByClassName
+            // 能力检测！！
+            if (context.getElementsByClassName) {
+                return context.getElementsByClassName(className);
+            } else {
+                var arr = document.getElementsByTagName("*");
+                // var arr = context.getElementsByTagName(tagName);
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i].className.indexOf(className) != -1) { //"aa bb" == "aa"
+                        result.push(arr[i]);
+                    }
+                }
+                return result;
+            }
+        }
+    </script>
+</body>
+
+</html>

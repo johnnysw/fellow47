@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl, #tbl td, #tbl th{
+            border: 1px solid #000;
+        }
+        #tbl{
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table id="tbl"><thead>
+            <tr>
+                <!-- table data(column) -->
+                <th>用户名</th>
+                <th>性别</th>
+                <th>电话</th>
+            </tr>
+        </thead><tbody>
+            <tr>
+                <td>张三</td>
+                <td>男</td>
+                <td>12345678</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>男</td>
+                <td>987654</td>
+            </tr>
+            <!-- 在此处动态添加一行和行中的列 -->
+        </tbody></table>
+
+    <script>
+        var oTbl = document.getElementById('tbl');
+
+        // XML DOM的语法添加元素
+        // var oTbody = oTbl.childNodes[1];
+        // var oTr = document.createElement('tr');
+
+        // // var oTbody = oTbl.getElementsByTagName('tbody')[0];
+        // // console.log(oTbl.childNodes);
+
+
+        // var oTd1 = document.createElement('td');
+        // var oTd1Text = document.createTextNode('赵六');
+        // oTd1.appendChild(oTd1Text);
+        // oTr.appendChild(oTd1);
+
+        // var oTd2 = document.createElement('td');
+        // var oTd2Text = document.createTextNode('女');
+        // oTd2.appendChild(oTd2Text);
+        // oTr.appendChild(oTd2);
+
+        // var oTd3 = document.createElement('td');
+        // var oTd3Text = document.createTextNode('345678');
+        // oTd3.appendChild(oTd3Text);
+        // oTr.appendChild(oTd3);
+
+        // oTbody.appendChild(oTr);
+
+        // HTML DOM的语法添加元素
+        var oTbody = oTbl.tBodies[0];
+        var oTr = oTbody.insertRow();
+        oTr.insertCell().innerHTML = '赵六';
+        oTr.insertCell().innerHTML = '女';;
+        oTr.insertCell().innerHTML = '876';;
+        
+    </script>
+</body>
+</html>

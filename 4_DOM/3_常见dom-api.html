@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+        }
+        .aa{
+            border: 2px solid #000;
+        }
+        .bb{
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <button id="btn1">加边框</button>
+    <button id="btn2">加外边距</button>
+
+    <h1 id="h11">这是h1</h1>
+
+    <div id="div2">
+        <!--  -->
+        <h1 id="h12">这是第二个h1</h1></div>
+
+    <script>
+        // var oDiv1 = document.getElementById('div1');
+        // oDiv1.onclick = function(){
+        //     oDiv1.style.backgroundColor = 'red';
+        //     // oDiv1.className = 'aa bb';
+        //     console.log(oDiv1.classList);
+        // };
+        // var oBtn1 = document.getElementById('btn1')
+        // var oBtn2 = document.getElementById('btn2')
+
+        // oBtn1.onclick = function(){
+        //     // oDiv1.className = 'aa';
+        //     oDiv1.classList.add('aa');
+        // };
+        // oBtn2.onclick = function(){
+        //     // oDiv1.className = 'bb';
+        //     oDiv1.classList.add('bb');
+        // };
+
+        // var oH1 = document.getElementById('h11');
+
+
+        // console.log(  oH1.nodeType   ); // => 1
+        // console.log(  oH1.getAttributeNode('id').nodeType   ); // => 2
+        // console.log(  oH1.firstChild.nodeType   ); // => 3
+
+        var oDiv2 = document.getElementById('div2')
+
+        var oH12 = document.getElementById('h12');
+        // console.log(oH12.nextElementSibling);
+
+        // console.log(  next(oH12)  );
+        var elem = next(oH12);
+        if(elem){
+            elem.style.background = 'red';
+        }
+       
+
+        // console.log(oDiv2.childNodes);
+        // console.log(oDiv2.children);
+
+        // console.log(oDiv2.firstElementChild);
+
+        function next(elem){
+            do{
+                elem = elem.nextSibling;
+            }while(elem && elem.nodeType != 1);
+            return elem;
+        }
+
+        // first(oDiv2);   // => h1
+
+        // function first(elem){
+        //     do{
+        //         elem.
+        //     }while()
+        // }
+    </script>
+</body>
+</html>

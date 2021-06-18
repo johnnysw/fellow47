@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tbl1, #tbl1 td{
+            border: 1px solid #000;
+        }
+        #tbl1{
+            width: 60%;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <table id="tbl1">
+        <tr>
+            <td>11</td>
+            <td>lisi</td>
+            <td><button class="btn-del" userid="11">删除</button></td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>wangwu</td>
+            <td>
+                <button class="btn-del" userid="22">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>zhaoliu</td>
+            <td><button class="btn-del" userid="33">删除</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function remove(elem){
+            elem.parentNode.removeChild(elem);
+        }
+        var aBtn = document.querySelectorAll('.btn-del');
+        for(var i=0; i<aBtn.length; i++){
+            aBtn[i].onclick = function(){
+                console.log(this.getAttribute('userid'));
+                remove(this.parentNode.parentNode);
+            };
+        }
+    </script>
+</body>
+</html>

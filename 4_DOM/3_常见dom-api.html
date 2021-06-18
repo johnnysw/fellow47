@@ -17,6 +17,31 @@
         .bb{
             margin-left: 50px;
         }
+
+        #div3{
+            /* position: absolute; */
+        }
+        #p2{
+            /* width: 200px; */
+            height: 100px;
+            background: #f00;
+            border: 5px solid #000;
+            padding: 10px;
+            margin: 20px;
+            overflow: scroll;
+        }
+        #div5{
+            width: 200px;
+            height: 200px;
+            background: #0f0;
+        }
+        #div6{
+            width: 500px;
+            height: 300px;
+            background: #ccc;
+            /* position: absolute;
+            left: 50px; */
+        }
     </style>
 </head>
 <body>
@@ -28,7 +53,30 @@
 
     <div id="div2">
         <!--  -->
-        <h1 id="h12">这是第二个h1</h1></div>
+        <h1 id="h12">这是第二个h1</h1>
+        <p>这是p</p>
+    </div>
+
+    <div id="div3">
+        <div id="div4">
+            <p id="p2" style=" width: 200px;">
+                这是p2这是p2这是p2这是p2这是p2这是p2这是p2这是p2这是这是p2这是p2
+                p2这是p2这是p2这是p2这是p2这是p2这是p2这是p2这是p2这是p2这是p2这是p2
+            </p>
+        </div>
+    </div>
+
+    <div id="div6">
+        <div id="div5">
+        
+        </div>
+    </div>
+
+    <div id="div7">
+        haha
+    </div>
+
+
 
     <script>
         // var oDiv1 = document.getElementById('div1');
@@ -80,13 +128,28 @@
             return elem;
         }
 
-        // first(oDiv2);   // => h1
+        first(oDiv2);   // => h1
 
-        // function first(elem){
-        //     do{
-        //         elem.
-        //     }while()
-        // }
+        function first(elem){
+            elem = elem.firstChild;
+            return elem && elem.nodeType != 1 ? next(elem) : elem;
+        }
+
+        var oP2 = document.getElementById('p2');
+        // console.log(oP2.offsetParent); //获取最近的已定位的祖先元素
+        // oP2.style.width = '300px';
+        // oP2.offsetWidth = 300;  //只读属性
+        // console.log(oP2.offsetWidth);
+        // console.log(oP2.clientWidth);
+        // console.log(oP2.style.width);
+        // console.log(   getComputedStyle(oP2, null).background    );
+
+        var oDiv5 = document.getElementById('div5');
+        // console.log(oDiv5.offsetLeft);
+
+        var oDiv7 = document.getElementById('div7')
+        oDiv7.innerText = '<h1>hehe</h1>'
+        // console.log(oDiv7.innerText);
     </script>
 </body>
 </html>

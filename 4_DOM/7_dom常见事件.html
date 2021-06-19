@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        用户名：<input type="text" id="username">
+    </p>
+    <p>
+        年级：
+        <select name="" id="grade">
+            <option value="">19级</option>
+            <option value="">20级</option>
+        </select>
+    </p>
+    <p>
+        搜索：<input type="text" id="search">
+    </p>
+    <p>
+        <button id="btn1">click me</button>
+        <div id="div1"></div>
+    </p>
+    <script>
+        var oUsername = document.getElementById('username');
+        var oGrade = document.getElementById('grade');
+        var oSearch = document.getElementById('search');
+        var oDiv1 = document.getElementById('div1')
+        var oBtn1 = document.getElementById('btn1');
+
+        oUsername.onblur = function(){
+            console.log('haha');
+        };
+
+        oUsername.onfocus = function(){
+            console.log('hehe');
+        };
+
+        oGrade.onchange = function(){
+            console.log(11111);
+        }
+
+        oSearch.onkeyup = function(){
+            console.log(this.value);
+        }
+
+        oBtn1.onclick = function(event){
+            console.log('haha');
+        }
+
+        oDiv1.onmouseover = function(){
+            console.log('over...');
+        }
+
+        oDiv1.onmouseout = function(){
+            console.log('out...');
+        }
+
+        oDiv1.onmousemove = function(){
+            console.log('move...');
+        }
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选项卡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 400px;
+            height: 300px;
+            margin: 50px auto;
+        }
+
+        #tab {
+            list-style: none;
+            overflow: hidden;
+        }
+
+        #tab li {
+            float: left;
+            width: 120px;
+            height: 30px;
+            background: #ccc;
+            margin-right: 2px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #content {
+            height: 270px;
+            background: #ccc;
+            border-top: 1px solid #000;
+        }
+
+        #tab .selected {
+            background: #000;
+            color: #fff;
+        }
+
+        #content div {
+            display: none;
+        }
+
+        #content .selected {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <ul id="tab">
+            <li class="selected" tab="tab1">HTML</li>
+            <li tab="tab2">CSS</li>
+            <li tab="tab3">JavaScript</li>
+        </ul>
+        <div id="content">
+            <div class="selected" tab="tab1">00001</div>
+            <div tab="tab2">00002</div>
+            <div tab="tab3">00003</div>
+        </div>
+    </div>
+
+    <script>
+        // 1. 利用给Li加index索引的方式
+        var oTab = document.getElementById('tab');
+        var aLi = oTab.getElementsByTagName('li');
+        var oContent = document.getElementById('content');
+        var aDiv = oContent.getElementsByTagName('div');
+
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+               for(var i=0; i<aLi.length; i++){
+                    aLi[i].className = '';
+                    aDiv[i].className = '';
+               }
+               this.className = 'selected';
+               aDiv[this.index].className = 'selected';
+            }
+        }
+
+        // 2. 利用闭包（不推荐）
+        // var oTab = document.getElementById('tab');
+        // var aLi = oTab.getElementsByTagName('li');
+        // var oContent = document.getElementById('content');
+        // var aDiv = oContent.getElementsByTagName('div');
+
+        // for (var i = 0; i < aLi.length; i++) {
+        //     (function (index) {
+        //         aLi[i].onclick = function () {
+        //             for (var i = 0; i < aLi.length; i++) {
+        //                 aLi[i].className = '';
+        //                 aDiv[i].className = '';
+        //             }
+        //             this.className = 'selected';
+        //             aDiv[index].className = 'selected';
+        //         }
+        //     })(i);
+        // }
+
+        // 3. 利用dom属性
+        // var oTab = document.getElementById('tab');
+        // var aLi = oTab.getElementsByTagName('li');
+        // var oContent = document.getElementById('content');
+        // var aDiv = oContent.getElementsByTagName('div');
+
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].onclick = function(){
+        //        for(var i=0; i<aLi.length; i++){
+        //             aLi[i].className = '';
+        //             aDiv[i].className = '';
+        //        }
+        //        this.className = 'selected';
+        //        aDiv[this.getAttribute('index')].className = 'selected';
+        //     }
+        // }
+
+        // 4. 利用自定义属性找对应关系
+        // var oTab = document.getElementById('tab');
+        // var aLi = oTab.getElementsByTagName('li');
+        // var oContent = document.getElementById('content');
+        // var aDiv = oContent.getElementsByTagName('div');
+
+        // for (var i = 0; i < aLi.length; i++) {
+        //     aLi[i].onclick = function () {
+        //         var tab = this.getAttribute('tab');
+        //         for (var i = 0; i < aLi.length; i++) {
+        //             aLi[i].className = '';
+        //             aDiv[i].className = '';
+        //         }
+        //         this.className = 'selected';
+        //         for(var i=0; i<aDiv.length; i++){
+        //             if(aDiv[i].getAttribute('tab') == tab){
+        //                 aDiv[i].className = 'selected';
+        //             }
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

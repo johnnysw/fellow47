@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">添加</button>
+    <ul id="ul1">
+        <li>11</li>
+        <li>22</li>
+    </ul>
+
+    <script>
+        var oBtn = document.getElementById('btn')
+        var oUl1 = document.getElementById('ul1')
+        var aLi = oUl1.getElementsByTagName('li')
+        // var fn = function () {
+        //     console.log(this.innerHTML);
+        // };
+        // for (var i = 0; i < aLi.length; i++) {
+        //     aLi[i].onclick = fn
+        // }
+        oBtn.onclick = function () {
+            var oLi = document.createElement('li')
+            oLi.innerHTML = Math.random();
+            // oLi.onclick = fn
+            oUl1.appendChild(oLi)
+        }
+
+        // 利用事件冒泡(委托)解决后生成元素事件绑定问题
+        oUl1.onclick = function(e){
+            e = e || window.event; //处理兼容
+            var target = e.target || e.srcElement;
+            if(target.tagName == 'LI'){
+                console.log(target.innerHTML);
+            }
+        }
+    </script>
+</body>
+
+</html>

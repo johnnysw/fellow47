@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">点我</button>
+    <script>
+        var oBtn1 = document.getElementById('btn1');
+        // oBtn1.onclick = function(){
+        //     console.log(this == oBtn1);
+        // };
+
+        // var fn1 = function(){
+        //     console.log(1111);
+        // };
+
+        // var fn2 = function(){
+        //     console.log(1111);
+        // };
+
+        // console.log(fn1 == fn2);
+
+        var fn = function(){
+            console.log(1111);
+        };
+
+        var fn2 = function(){
+            console.log(2222);
+        };
+
+        // oBtn1.addEventListener('click', fn, false);
+
+        // oBtn1.removeEventListener('click', fn, false);
+
+        // var fn = function(){
+        //     console.log(this == window);
+        // };
+        // oBtn1.attachEvent('onclick', fn);
+
+        // oBtn1.detachEvent('onclick', fn);
+
+        // fn.call(oBtn1);
+
+        addEvent(oBtn1, 'click', fn);
+        addEvent(oBtn1, 'click', fn2);
+
+        removeEvent(oBtn1, 'click', fn);
+        removeEvent(oBtn1, 'click', fn2);
+
+        // addEvent(oBtn1, 'click', function () {
+        //     console.log(222);
+        // });
+
+        function addEvent(elem, type, handler) {
+            if (elem.addEventListener) {
+                elem.addEventListener(type, handler, false);
+            } else if (elem.attachEvent) {
+                elem[type+handler] = function () {
+                    handler.call(elem)
+                };
+                elem.attachEvent('on' + type, elem[type+handler])
+            } else {
+                // oBtn1.onclick
+                elem['on' + type] = handler;
+            }
+        }
+
+        function removeEvent(elem, type, handler){
+            if(elem.removeEventListener){
+                elem.removeEventListener(type, handler, false);
+            }else if(elem.detachEvent){
+                elem.detachEvent('on' + type, elem[type+handler]);
+            }else{
+                elem['on' + type] = null;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
